@@ -1,0 +1,75 @@
+<?php
+
+require_once 'modele_joueurs.php';
+require_once 'vue_joueurs.php';
+
+class ContJoueurs {
+
+    private $vue;
+    private $modele;
+    private $action;
+
+    function __construct() {
+        $this->vue = new VueJoueurs();
+        $this->modele = new ModeleJoueurs();
+        $this->action = isset($_GET['action']) ? $_GET['action'] : "bienvenue" ;
+    }
+
+    function liste() {
+        $this->vue->affiche_liste($this->modele->getListe());
+    }
+
+    function id_joueur($idJoueur){
+        $this->vue->affiche_detail($this->modele->getDetail($idJoueur));
+    }
+
+
+    function exe(){
+
+        switch ($this->action){
+            case "bienvenue":
+                echo "Bienvenue sur le site";
+                $this->vue->menu();
+                break;
+            
+            case "liste":
+                $this->vue->menu();
+                echo "Voici une liste de joueur <br>";
+                $this->liste();
+                break;
+            
+            case "details":
+                $this->vue->menu();
+                $id = isset($_GET['id']) ? $_GET['id'] : "Error" ;
+                $this->id_joueur($id);
+                break;
+                
+             case "ajout":
+                $this->vue->menu();
+                $this->vue->form_ajout();
+                if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                    $this->ajout();
+                }
+                break;
+
+            default:
+                echo "Error";
+                break;
+        }
+
+    }
+    
+    public function ajout() {
+        if (isset($_POST['nom']) && isset($_POST['description'])) {
+            $nom = $_POST['nom'];
+            $description = $_POST['description'];
+    
+            $this->modele->ajouterJoueur($nom, $description);
+        } else {
+            echo "Erreur : les données du formulaire sont manquantes.";
+        }
+    }
+
+}
+?>
+
