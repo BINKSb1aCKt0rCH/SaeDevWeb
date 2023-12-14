@@ -12,7 +12,7 @@
     <nav>
         <button>Tours</button>
         <button>Ennemis</button>
-        <a href="index.php?modules=mod_classement&action=classement" >Classement</a>
+        <a href="index.php?modules=mod_classement&action=afficher" >Classement</a>
         <button>Se connecter</button>
 
         <div class="login-icon"></div>  <!-- Bouton pour se connecter/s inscrire -->
