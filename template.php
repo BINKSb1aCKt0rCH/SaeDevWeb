@@ -3,23 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Tower Defense</title>
-    <link rel="stylesheet" href="style.css"> <!-- Lier le fichier CSS externe -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <div style="text-align: left;"> 
-        <h1>Tower Defense</h1></div>
-        <?php $menu->affiche(); ?>
 
-</header>
+    <div class="animation-container">
 
-    <?php echo ''.$contenuModule; ?>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
 
-<footer>
-    <p>Tower Defense / Informations légales</p>
-</footer>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+    </div>
+    
+    
+<!-- Ajoutez autant de divs "firework" que vous le souhaitez -->
 
+
+    <?php
+    // Démarrer la session au début du script
+    /*session_start();*/
+
+    // Inclure la classe VueConnexion
+    /*require_once 'vue_connexion.php';*/
+
+    // Création d'une instance de VueConnexion
+    $vueConnexion = new VueConnexion();
+
+    // Inclure le menu (assurez-vous que cette classe est également incluse si nécessaire)
+    /*require_once 'CompMenu.php';*/
+    $menu = new CompMenu();
+    ?>
+
+    <header>
+        <div style="text-align: left;">
+            <a href="index.php">
+                <div class="logo"></div> 
+            </a>
+        </div>
+        <?php
+        // Afficher le menu
+        if (isset($menu)) {
+            $menu->affiche();
+        }
+
+        // Afficher la barre de recherche si l'utilisateur est connecté
+        /*$vueConnexion->affiche_barre_recherche();*/
+        ?>
+    </header>
+
+    <main>
+        <?php echo ''.$contenuModule; ?>
+    </main>
+
+    <footer>
+        <p>Tower Defense / Informations légales</p>
+    </footer>
 </body>
 </html>

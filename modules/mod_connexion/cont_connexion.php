@@ -30,7 +30,7 @@ class ContConnexion {
                     $mot_de_passe_hash = password_hash($passwd, PASSWORD_DEFAULT);
 
                     if ($this->modele_connexion->ajouterUtilisateur($nomJoueur, $mot_de_passe_hash)) {
-                        echo "Inscription réussie !";
+                        echo "Inscription réussie ! <a href='index.php?module=connexion&action=connexion'>Connectez-vous</a>.";
                     } else {
                         echo "Erreur lors de l'inscription.";
                     }
@@ -73,6 +73,12 @@ class ContConnexion {
         $affichage = $this->vue_connexion->getAffichage();
         return $affichage;
     }
+
+    /*public function recherche(){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $nomJoueur = $_POST['nomJoueur'];
+        }
+    }*/
     
 
     public function exec() {
