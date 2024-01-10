@@ -1,40 +1,69 @@
-<!--
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tower Defense</title>
-    <link rel ="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <div><h1>Tower Defense</h1></div>
-    <nav>
-        <button>Tours</button>
-        <button>Ennemis</button>
-        <a href="index.php?module=mod_classement&action=afficher" >Classement</a>
-        <button>Se connecter</button>
 
-        <div class="login-icon"></div>  Bouton pour se connecter/s inscrire 
-    </nav>';
-</header>
-<main>
-     Contenu de la page 
-    /*
-        $module = isset($_GET['module'])? $_GET['module'] : 'mod_joueurs';
-        switch($module){
-            case 'classement':
-                include_once 'modules/mod_classement/' .$module .'.php';
-                Connexion::initConnexion();
-                $contClassement = new ClassementControleur();
-                break;
-        }*/
+    <div class="animation-container">
+
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+    </div>
     
-</main>
-<footer>
-    <p>Tower Defense / Informations légales</p>
-</footer>
+    
+<!-- Ajoutez autant de divs "firework" que vous le souhaitez -->
+
+
+    <?php
+    // Démarrer la session au début du script
+    /*session_start();*/
+
+    // Inclure la classe VueConnexion
+    /*require_once 'vue_connexion.php';*/
+
+    // Création d'une instance de VueConnexion
+    $vueConnexion = new VueConnexion();
+
+    // Inclure le menu (assurez-vous que cette classe est également incluse si nécessaire)
+    /*require_once 'CompMenu.php';*/
+    $menu = new CompMenu();
+    ?>
+
+    <header>
+        <div style="text-align: left;">
+            <a href="index.php">
+                <div class="logo"></div> 
+            </a>
+        </div>
+        <?php
+        // Afficher le menu
+        if (isset($menu)) {
+            $menu->affiche();
+        }
+
+        // Afficher la barre de recherche si l'utilisateur est connecté
+        /*$vueConnexion->affiche_barre_recherche();*/
+        ?>
+    </header>
+
+    <main>
+        <?php echo ''.$contenuModule; ?>
+    </main>
+
+    <footer>
+        <p>Tower Defense / Informations légales</p>
+    </footer>
 </body>
 </html>
-    -->

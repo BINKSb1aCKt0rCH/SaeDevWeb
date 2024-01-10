@@ -1,0 +1,256 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-image: url('imageSite.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+    min-height: 100vh;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    max-width: 90%;
+}
+
+header, footer {
+    background-color: rgba(100, 250, 100, 0.5);
+    color: white;
+    padding: 0px;
+    margin: 0px 0;
+}
+
+main {
+    flex-grow: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: -100px;
+}
+
+header > div, header > nav {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    gap: 10px;
+}
+
+.menu-button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(100, 250, 100, 0.5);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+/*
+.deconnexion-button {
+    background-color: rgba(255, 0, 0, 0.7);
+    color: white; 
+}
+
+.deconnexion-button:hover {
+    background-color: rgba(255, 0, 0, 1); 
+    transform: scale(1.1); 
+}
+*/
+
+.menu-button:hover {
+    transform: scale(1.1);
+}
+
+.connexion-icon {
+    width: 50px; 
+    height: 50px;
+    background-image: url('connexionIns.png');
+    background-size: cover;
+    display: inline-block;  
+    vertical-align: middle;
+}
+
+.deconnexion-icon {
+    width: 50px; 
+    height: 50px;
+    background-image: url('deconnexion.png');
+    background-size: cover;
+    display: inline-block;  
+    vertical-align: middle;
+}
+
+.logo {
+    width: 150px; 
+    height: 100px;
+    background-image: url('logo.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    align-self: flex-end;
+    margin-top: 5px;
+}
+
+/* Styles pour la barre de recherche */
+.search-bar {
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-container {
+    /* Centrer la barre de recherche */
+    order: 2; /* Placez-le au milieu si nécessaire */
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Nouveaux styles pour les formulaires */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"], input[type="password"] {
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box; /* Pour éviter le débordement */
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #367c39;
+}
+
+a {
+    color: #4CAF50;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+@keyframes moveMeteor {
+    0% {
+        left: 100px;
+        top: 200px;
+        opacity: 1;
+    }
+    100% {
+        left: 110%;
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.meteor {
+    transform: rotate(-45deg);
+    position: absolute;
+    background: linear-gradient(135deg, rgba(255,0,0,1) 0%, rgba(255,0,0,0) 100%);
+    width: 2px; /* Largeur du météore */
+    height: 150px; /* Longueur du météore */
+    opacity: 0; /* Commence invisible */
+    will-change: transform; /* Pour optimiser les performances */
+    animation: moveMeteor 1.5s linear infinite; /* Durée et répétition de l'animation */
+}
+
+/* Créer plusieurs météores avec des délais différents */
+.meteor:nth-child(1) {
+    animation-delay: 0.5s;
+    animation-duration: 2s;
+}
+.meteor:nth-child(2) {
+    animation-delay: 1s;
+    animation-duration: 3s;
+}
+.meteor:nth-child(3) {
+    animation-delay: 1.5s;
+    animation-duration: 2.5s;
+}
+.meteor:nth-child(4) {
+    animation-delay: 2s;
+    animation-duration: 3.5s;
+}
+.meteor:nth-child(5) {
+    animation-delay: 2.5s;
+    animation-duration: 4s;
+}
+.meteor:nth-child(6) {
+    animation-delay: 3s;
+    animation-duration: 4.5s;
+}
+/* Ajoutez autant de météores que vous le souhaitez en répétant ce modèle */
+
+@keyframes explode {
+    from {
+        transform: scale(0.1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.firework {
+    position: absolute;
+    bottom: 50%; /* Commencez du bas de l'écran */
+    left: 50%; /* Ajustez si nécessaire pour la position horizontale */
+    width: 50px; /* Taille du feu d'artifice */
+    height: 50px;
+    background: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(255,0,0,0) 70%);
+    border-radius: 50%;
+    animation: explode 5s ease-out infinite;
+}
+
+/* Variez les délais et la durée pour chaque feu d'artifice pour plus de naturel */
+.firework:nth-child(1) {
+    animation-delay: 0.5s;
+}
+.firework:nth-child(2) {
+    animation-delay: 1s;
+}
+.firework:nth-child(3) {
+    animation-delay: 1.5s;
+}
+/* ... et ainsi de suite pour chaque feu d'artifice ... */
