@@ -9,17 +9,20 @@ class ClassementControleur{
     public function __construct(){
         $this->modele = new ClassementModele();
         $this->vue = new ClassementVue();
+        $this->action = isset($_GET['action']) ? $_GET['action'] : '';
     }
-    public function afficherClassement(){
+    public function affiche(){
         $tab = $this->modele->getClassement();
-        $this->vue->afficheClassement($tab);
+        return $this->vue->afficheClassement($tab);
     }
     public function exec(){
-		$this->action = isset($_GET["action"]) ? $_GET["action"] : "Classement";
         switch ($this->action){
             case "afficher" :
-                $this->afficherClassement();
+                $this->affiche();
         }
+    }
+    public function getAffichage(){
+        return $this->vue->getAffichage();
     }
 
 }

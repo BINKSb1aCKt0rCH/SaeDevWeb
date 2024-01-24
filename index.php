@@ -3,8 +3,10 @@ session_start();
 require_once 'modules/mod_connexion/mod_connexion.php';
 /*require_once 'modules/mod_tour/mod_tours.php';
 require_once 'modules/mod_ennemi/mod_ennemis.php'*/
-require_once 'Connexion.php';
+require_once 'connexion.php';
 require_once 'composants/CompMenu.php';
+require_once 'modules/mod_classement/classement_mod.php';
+require_once 'modules/mod_profil/mod_profil.php';
 
 Connexion::initConnexion();
 
@@ -27,7 +29,14 @@ if (isset($_GET['module'])) {
         case 'connexion':
             $mod = new ModConnexion();
             break;
+        case 'classement':
+            $mod = new ModClassement();
+            break;
+        case 'profil':
+            $mod = new ModProfil();
+            break;
         }
+    
     }
 
 if ($mod !== null) {

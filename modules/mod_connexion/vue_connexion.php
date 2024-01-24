@@ -21,7 +21,7 @@ class VueConnexion extends VueGenerique {
         ?>
         <div class="form-container">
             <h2>Connexion</h2>
-            <form method="post" action="index.php?module=connexion&action=connexion">
+            <form method="post" action="index.php?module=profil&action=profil"><!--pointe sur la page profil-->
                 Nom d'utilisateur : <input type="text" name="nomJoueur" required><br>
                 Mot de passe : <input type="password" name="passwd" required><br>
                 <input type="submit" value="Se connecter">

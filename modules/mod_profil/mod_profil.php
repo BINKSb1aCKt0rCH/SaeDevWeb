@@ -1,10 +1,10 @@
 <?php
-require_once "modules/mod_classement/classement_cont.php";
+require_once "modules/mod_profil/cont_profil.php";
 
-class ModClassement{
+class ModProfil{
     private $controleur;
     public function __construct(){
-        $this->controleur = new ClassementControleur();
+        $this->controleur = new ContProfil();
         $this->controleur->exec();
     }
     public function getAffichage(){
