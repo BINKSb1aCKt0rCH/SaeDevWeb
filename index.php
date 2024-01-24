@@ -2,7 +2,7 @@
 session_start();
 require_once 'modules/mod_connexion/mod_connexion.php';
 require_once 'modules/mod_tours/mod_tours.php';
-//require_once 'modules/mod_ennemi/mod_ennemis.php'
+require_once 'modules/mod_monstres/mod_monstres.php';
 require_once 'Connexion.php';
 require_once 'composants/CompMenu.php';
 
@@ -20,8 +20,8 @@ if (isset($_GET['module'])) {
             $mod = new ModuleTours();
             break;
 
-        case 'ennemis':
-            $mod = new ModEnnemis();
+        case 'monstres':
+            $mod = new ModuleMonstres();
             break;    
 
         case 'connexion':
