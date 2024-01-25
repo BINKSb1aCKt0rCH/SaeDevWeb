@@ -45,6 +45,7 @@ if (isset($_GET['module'])) {
         case 'accueil':
             $mod = new ModuleAccueil();
             break;
+        default : $mod = new ModuleAccueil();
         }
     
     }
