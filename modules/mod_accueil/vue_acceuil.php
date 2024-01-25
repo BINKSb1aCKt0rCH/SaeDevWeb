@@ -10,7 +10,7 @@ class VueAccueil extends VueGenerique{
     </head>
     <body>
         <h1>Description du jeu</h1>
-    <div>
+    <div class="accueil">
         <p>Bienvenue sur le site du jeu <u>Tower Defense</u> !</p>
 
             Comme vous l\'avez sans doute remarqué, il s\'agit d\'un jeu de tower defense sur le thème <em>fantisie</em>.

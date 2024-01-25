@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -18,8 +18,24 @@ h1 {
     padding: 10px;
 }
 
+.accueil {
+    background-color: rgba(248, 248, 248, 0.637);
+    width: 80%;
+    border-collapse: separate;
+    margin: 20px 0px;
+    border-radius: 20px;
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+}
 
 
-
-
+@media screen and (min-width: 768px) {
+    /* Appliquer ces styles uniquement pour les écrans de 768 pixels et plus */
+    .accueil {
+        width: 90%;
+        margin: 20px auto;
+    }
+}
 
