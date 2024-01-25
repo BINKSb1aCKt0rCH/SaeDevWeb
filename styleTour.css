@@ -18,31 +18,38 @@ h1 {
     padding: 10px;
 }
 
-table {
-    background-color: rgba(248, 248, 248, 0.8);
-    width: 80%;
-    border-collapse: separate;
-    margin: 20px 0px;
-    border-radius: 20px;
+/* Conteneur des cartes */
+.card-container {
+    display: flex;
+    flex-direction: row; /* Alignement horizontal */
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px; /* Espace entre les cartes */
 }
 
-td {
-    border: 1px solid #ccc;
+/* Style pour les cartes d'information */
+.card {
+    background-color: rgba(248, 248, 248, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     display: flex;
     align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-     border-radius: 8px;
+    flex-direction: column;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+    width: 300px; /* Largeur fixe des cartes */
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 img {
     max-width: 64px;
     height: 64px;
-    margin-right: 50px;
-    margin-left: -10px;
+    margin-bottom: 20px;
 }
 
 ul {
@@ -51,20 +58,26 @@ ul {
     margin: 0;
 }
 
-.blanc {
-    background: #c7ecee;
+li {
+    margin: 10px 0;
+    padding: 10px;
     border-radius: 5px;
 }
 
-.gray {
+.blanc, .gray {
     background-color: #e6f7ff;
-    border-radius: 5px;
+}
+
+.blanc {
+    background: #c7ecee;
 }
 
 @media screen and (min-width: 768px) {
-    /* Appliquer ces styles uniquement pour les écrans de 768 pixels et plus */
-    table {
-        width: 30%;
-        margin: 20px auto;
+    .card-container {
+        justify-content: space-around;
+    }
+
+    .card {
+        width: 45%; /* Ajustement pour les grands écrans */
     }
 }
