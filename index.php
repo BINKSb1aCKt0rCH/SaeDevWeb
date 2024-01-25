@@ -3,7 +3,7 @@ session_start();
 require_once 'modules/mod_connexion/mod_connexion.php';
 require_once 'modules/mod_tours/mod_tours.php';
 require_once 'modules/mod_monstres/mod_monstres.php';
-require_once 'connexion.php';
+require_once 'Connexion.php';
 require_once 'composants/CompMenu.php';
 require_once 'modules/mod_classement/classement_mod.php';
 require_once 'modules/mod_profil/mod_profil.php';
