@@ -29,7 +29,7 @@ public function affiche($logo,$pseudo,$description,$succes) {
     <div class="contenu">
         <section class="intro">
             <div class="imageFond">
-                <img src="images/imageSite1.png" class="cover_photo">
+                <img src="images/imageSite1.png" class="cover_photo" height="200px" width="400px">
                 <div class="photoProfil">
                     <!--<img src="images/profil.png">-->
                     <!--TODO-->
@@ -49,9 +49,9 @@ public function affiche($logo,$pseudo,$description,$succes) {
                     </button>
                     <!--formulaire pop pour modifier un éléement du profil-->
                     <div class="popup" id="modif">
-    <div class="close-btn">&times;</div>
-    <div class="form">
-        <form method ="post">
+        <div class="close-btn">&times;</div>
+        <div class="form">
+        <form method ="post" action="index.php?module=profil&action=AjoutAmi">
         <div class="form-element">
             <h2>Photo de profil :</h2>
             <input type="file" id="profil" />
@@ -70,6 +70,7 @@ public function affiche($logo,$pseudo,$description,$succes) {
 <div class="popup">
     <div class="close-btn">&times;</div>
     <div class="form">
+        <form method ="post" action="index.php?module=profil&action=AjoutAmi">
         <div class="form-element">
             <h2>Chercher un joueur :</h2>
             <input type="text" id="chercherJoueur" />
@@ -79,11 +80,12 @@ public function affiche($logo,$pseudo,$description,$succes) {
         </div>
     </div>
 </div>-->
-                <!--
+                
                 </div>
+                <h1>Description : <h1>
                 <div class="desc">
+                    
                     <?php $this->getDescription($description)?>
-
                 </div>
                 <div class="corpsPage">
                     <div class="succes">
@@ -98,7 +100,7 @@ public function affiche($logo,$pseudo,$description,$succes) {
                         <p>Calcul des stats</p>
                     </div>
                 </div>
-            </div>-->
+            </div>
         </section>
     </div>
     <script src="scriptProfil.js"></script>

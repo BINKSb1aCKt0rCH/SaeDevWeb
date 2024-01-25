@@ -12,11 +12,10 @@ public function __construct(){
     }
     public function profil(){
         if(isset($_POST['nomJoueur'])){
-            
             $nomJ = $_POST['nomJoueur'];
             $id = $this->modele->getIdJoueur($nomJ);
             $description = $this->modele->getDescription($id);
-            $pseudo = $this->modele->getPseudo($nomJ);
+            $pseudo = $this->modele->getPseudo($id);
             $logo = $this->modele->logo($id);
             $succes = $this->modele->getSucces($id);
             $this->vue->affiche($logo,$pseudo,$description,$succes);
@@ -27,6 +26,9 @@ public function __construct(){
         switch($this->action){
             case 'profil':
                 $this->profil();
+            break;
+            case'AjoutAmi':
+                
         }
         
     }

@@ -27,11 +27,11 @@ class ModeleProfil extends Connexion{
             NATURAL JOIN gagneSucces 
             NATURAL JOIN Joueur 
             WHERE idJoueur = :id");
-    
         $req->bindParam(':id', $id, PDO::PARAM_INT);
     
         if ($req->execute()) {
             $res = $req->fetchAll(PDO::FETCH_ASSOC);
+            
             return $res;
         } else {
             return null;
@@ -51,12 +51,13 @@ class ModeleProfil extends Connexion{
 
     public function getPseudo($id) {
         $req = self::$bdd->prepare("SELECT nomJoueur FROM Joueur WHERE idJoueur = :id");
-        $req->bindParam(':id', $id, PDO::PARAM_INT);
+        $req->bindParam(':id', $id['idJoueur'], PDO::PARAM_INT);
         if ($req->execute()) {
             $res = $req->fetch(PDO::FETCH_ASSOC);
+
             return $res;
         } else {
-            return null;
+            return 0;
         }
     }
 

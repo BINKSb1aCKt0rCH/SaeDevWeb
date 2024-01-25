@@ -9,8 +9,9 @@ class ClassementVue extends VueGenerique{
     <link rel="stylesheet" href="style/classement_style.css">
     <script src="scriptProfil.js"></script>
     </head>';
+     ?><h1>Classement</h1>
+     <?php
         echo '<div class="classement-container">';
-        echo '<h2>Classement</h2>';
         echo '<ol class="classement-list">';
         foreach ($tab as $classement) {
             echo '
