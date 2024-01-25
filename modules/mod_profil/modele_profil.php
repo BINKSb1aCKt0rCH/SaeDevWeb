@@ -10,8 +10,9 @@ class ModeleProfil extends Connexion{
     public function modifierProfil($id, $bio, $nom){
         if(isset($_POST['submit'])){
         $req = self::$bdd->prepare("UPDATE Joueur SET nomJoueur=?, description=? WHERE idJoueur = ?");
+        var_dump($nom,$bio,$id);
         $req->execute(array($nom, $bio, $id));
-    
+            
         // Utilisation de rowCount() pour vérifier le nombre de lignes affectées
         if($req->rowCount() == 0){
             return false;
@@ -82,7 +83,17 @@ class ModeleProfil extends Connexion{
     }
     
 
-    public function logo($id, $chemin) {
+    public function logo($id) {
+        $req = self::$bdd->prepare("select avatar from Joueur where idJoueur = :id");
+        $req->bindParam(':id', $id["idJoueur"], PDO::PARAM_INT);
+        if($req->execute()){
+            $res = $req->fetch();
+            return $res["avatar"];
+        }
+        else 
+            return null;
+
+        /*
         $dossierDest = "images/";
         $req = "UPDATE joueur SET photo=? WHERE id=?";
 		$pdo_req = self::$bdd->prepare($req);
@@ -91,7 +102,8 @@ class ModeleProfil extends Connexion{
 			return false;
 		else
 			return true;
-        }
+        }*/
 
+    }
 }
 ?>

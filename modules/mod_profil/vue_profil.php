@@ -2,7 +2,7 @@
 require_once 'vue_generique.php';
 class VueProfil extends VueGenerique {
     public function afficheLogo($logo){
-       echo' <img src="images/'.$logo .'"/>' ;
+       echo' <img src="'.$logo .'"/>' ;
     }
     public function getDescription($descr){
         echo $descr;
@@ -22,6 +22,11 @@ class VueProfil extends VueGenerique {
 
     public function modifierProfil($donnees){
         ?>
+            <head>
+  <meta charset="utf-8">
+  <title>Profil</title>
+  <link rel="stylesheet" href="style/Profil_style.css">
+  </head>
         <div class="popup" id="modif">
                         
         <div class="close-btn">&times;</div>
@@ -42,7 +47,7 @@ class VueProfil extends VueGenerique {
         </div>
         <div class="form-element">
             <h2>Nom JOUEUR</h2>
-            <input type="text" id="nomJoueur" name="nomJOueur"
+            <input type="text" id="nomJoueur" name="nomJoueur"
              value="<?= $donnees['nomJoueur']?>"/>
         </div>
         <div class="form-element">
@@ -50,7 +55,7 @@ class VueProfil extends VueGenerique {
             <input type="text" id="description" name="description"
              value="<?= $donnees['description']?>"/>
         </div>
-        <input type="hidden" name="id" value="<?=$donnees['idJoueur']?>">
+        <input type="hidden" name="idJoueur" value="<?=$donnees['idJoueur']?>">
         <div class="form-element">
             <button type="submit" name="submit">Valider les changements</button>
         </div>
@@ -65,7 +70,7 @@ class VueProfil extends VueGenerique {
 	public function erreurBD() {
 		echo "Erreur lors de l'ajout/modification dans la BD";
 	}
-public function affiche(/*$logo,*/$pseudo,$description,$succes) {
+public function affiche($logo,$pseudo,$description,$succes) {
     ?>
     <head>
   <meta charset="utf-8">
@@ -75,17 +80,15 @@ public function affiche(/*$logo,*/$pseudo,$description,$succes) {
     <div class="contenu">
         <section class="intro">
             <div class="imageFond">
-                <img src="images/imageSite1.png" class="cover_photo" height="200px" width="400px">
+                <img src="images/imageSite1.png" class="cover_photo" >
                 <div class="photoProfil">
-                    <!--<img src="images/profil.png">-->
-                    <!--TODO-->
-                    <?php/* $this->afficheLogo($logo); */?>
+                    <?php  $this->afficheLogo($logo)?>
                 </div>
                 <div class="titre">
                     <h1><?php $this->getPseudo($pseudo); ?></h1>
                 </div>
                 
-                        <a href="index.php?module=profil&action=modifProfil">
+                        <a href="index.php?module=profil&action=formModif">
                             Modification profil</a>
                     
                     <!--formulaire pop pour modifier un éléement du profil-->

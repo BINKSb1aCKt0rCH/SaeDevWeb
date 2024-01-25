@@ -16,18 +16,20 @@ public function __construct(){
             $id = $this->modele->getIdJoueur($nomJ);
             $description = $this->modele->getDescription($id);
             $pseudo = $this->modele->getPseudo($id);
-            //$logo = $this->modele->logo($id);
+            $logo = $this->modele->logo($id);
             $succes = $this->modele->getSucces($id);
-            $this->vue->affiche(/*$logo,*/$pseudo,$description,$succes);
-        }
-        
+            $this->vue->affiche($logo,$pseudo,$description,$succes);
+        }       
     }
     public function modif(){
         
         if(isset($_POST['submit'])){
-            $nomJ = isset($_POST["nom"]) ? $_POST["nom"] : "erreur";
-            $desc = isset($_POST["description"]) ? $_POST["description"] : "erreur";
-            $idJ = isset($_POST["idJoueur"]) ? $_POST["idJoueur"] : "erreur";
+            //$nomJ = isset($_POST["nom"]) ? $_POST["nom"] : "";
+            $nomJ = $_POST["nomJoueur"];
+            $desc = $_POST["description"];
+            //$idJ = isset($_POST["idJoueur"]) ? $_POST["idJoueur"] : var_dump($_POST);
+            $idJ = $this->modele->getIdJoueur($nomJ);
+            $idJ2 = $_POST["idJoueur"];
             if($this->modele->modifierProfil($idJ,$desc,$nomJ)){
                 $this->vue->confirmModif();
             }else{
@@ -41,7 +43,7 @@ public function __construct(){
                     $this->vue->confirmModif();
                 else    
                     $this->vue->erreurBD();
-                    unlink("images/").$idJ ."name";
+                    //unlink("images/").$idJ ."name";
             }
         }
     }
