@@ -4,9 +4,11 @@ class CompMenu {
 
     public function __construct() {
         $this->menuContent = '<nav><ul>';
-        $this->menuContent .= '<li><a class="menu-button" href="index.php?module=tours">Tours</a></li>';
-        $this->menuContent .= '<li><a class="menu-button" href="index.php?module=ennemis">Ennemis</a></li>';
+
+        $this->menuContent .= '<li><a class="menu-button" href="index.php?module=tours&action=tours">Tours</a></li>';
+        $this->menuContent .= '<li><a class="menu-button" href="index.php?module=monstres&action=monstres">Monstres</a></li>';
         $this->menuContent .= '<li><a class="menu-button" href="index.php?module=classement&action=afficher">Classement</a></li>';
+
         $utilisateurConnecte = isset($_SESSION['user_id']); 
 
         if ($utilisateurConnecte) {

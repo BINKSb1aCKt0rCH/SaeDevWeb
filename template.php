@@ -31,7 +31,7 @@
 
     <header>
         <div style="text-align: left;">
-            <a href="index.php">
+            <a href="index.php?module=accueil&action=accueil">
                 <div class="logo"></div> 
             </a>
         </div>
@@ -44,12 +44,13 @@
         ?>
     </header>
 
+
     <main>
         <?php echo ''.$contenuModule; ?>
     </main>
 
     <footer>
-        <p>Tower Defense / Informations légales</p>
+        <p>&copy; 2023-2024 Esteban, Zakaria, Sofia. Tous droits réservés.</p>
     </footer>
 </body>
 </html>

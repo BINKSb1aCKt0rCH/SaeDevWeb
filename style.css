@@ -3,7 +3,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    background-image: url('imageSite.png');
+    background-image: url('images/imageSite.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -78,7 +78,7 @@ nav {
 .connexion-icon {
     width: 50px; 
     height: 50px;
-    background-image: url('connexionIns.png');
+    background-image: url('images/connexionIns.png');
     background-size: cover;
     display: inline-block;  
     vertical-align: middle;
@@ -87,7 +87,7 @@ nav {
 .deconnexion-icon {
     width: 50px; 
     height: 50px;
-    background-image: url('deconnexion.png');
+    background-image: url('images/deconnexion.png');
     background-size: cover;
     display: inline-block;  
     vertical-align: middle;
@@ -96,7 +96,7 @@ nav {
 .logo {
     width: 150px; 
     height: 100px;
-    background-image: url('logo.png'); 
+    background-image: url('images/logo.png'); 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
