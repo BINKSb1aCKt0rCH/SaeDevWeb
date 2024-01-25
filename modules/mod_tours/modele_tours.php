@@ -1,5 +1,5 @@
 <?php
-require_once 'connexion.php';
+require_once 'Connexion.php';
 
 class ModeleTours extends Connexion{
 
