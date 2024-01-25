@@ -22,12 +22,12 @@ class VueProfil extends VueGenerique {
 
     public function modifierProfil($donnees){
         ?>
-        <div class="popup" enctype="" id="modif">
+        <div class="popup" id="modif">
                         
         <div class="close-btn">&times;</div>
         <div class="form">
         
-        <form method ="post" action="index.php?module=profil&action=profil" enctype="multipart/form-data">
+        <form method ="post" action="index.php?module=profil&action=modif" enctype="multipart/form-data">
         <div class="form-element">
         <h2>Photo de profil :</h2>
             <?php
@@ -84,11 +84,6 @@ public function affiche(/*$logo,*/$pseudo,$description,$succes) {
                 <div class="titre">
                     <h1><?php $this->getPseudo($pseudo); ?></h1>
                 </div>
-                <div class="boutons">
-                    <button class="btn btn1" id="ajoutAmi" class="button">
-                        <i class="fas fa-user-plus"></i>
-                        Ajouter Ami
-                    </button>
                 
                         <a href="index.php?module=profil&action=modifProfil">
                             Modification profil</a>
