@@ -11,34 +11,60 @@ body {
     min-height: 100vh;
 }
 
+h1 {
+    text-align: center;
+    color: #333;
+    text-shadow: 3px 3px 3px white;
+    padding: 10px;
+}
+
 table {
+    background-color: rgba(248, 248, 248, 0.8);
     width: 80%;
-    border-collapse: collapse;
-    margin: 20px 0;
+    border-collapse: separate;
+    margin: 20px 0px;
+    border-radius: 20px;
 }
 
 td {
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 20px;
     display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+     border-radius: 8px;
+    text-align: center;
 }
 
 img {
     max-width: 64px;
     height: 64px;
-    margin-right: 10px;
+    margin-right: 50px;
+    margin-left: -10px;
 }
 
 ul {
-    list-style: none;
+    list-style: none; 
     padding: 0;
     margin: 0;
 }
 
 .blanc {
-    background: beige;
+    background: #c7ecee;
+    border-radius: 5px;
 }
 
 .gray {
-    background-color: darkgrey;
+    background-color: #e6f7ff;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+    /* Appliquer ces styles uniquement pour les écrans de 768 pixels et plus */
+    table {
+        width: 30%;
+        margin: 20px auto;
+    }
 }
