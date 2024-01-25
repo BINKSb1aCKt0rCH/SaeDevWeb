@@ -34,6 +34,10 @@ if (isset($_GET['module'])) {
         case 'profil':
             $mod = new ModProfil();
             break;
+        
+        case 'ami':
+            $mod = new ModAmi();
+            break;
         }
     
     }
