@@ -1,0 +1,41 @@
+.classement-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(248, 248, 248, 0.8); /* Couleur de fond avec opacité */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 30%; /* Utilisation de min-content pour définir la largeur minimale */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.classement-list {
+    list-style-type: none;
+    padding: 0;
+}
+h1{
+    text-align: center;
+    color: #333;
+    text-shadow: 3px 3px 3px whitesmoke;
+    padding: 10px;
+}
+.classement-item {
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond avec opacité */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nom-joueur {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.score {
+    font-weight: bold;
+    color: #4caf50; /* Couleur verte pour le score */
+}

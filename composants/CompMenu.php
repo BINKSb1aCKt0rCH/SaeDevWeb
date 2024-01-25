@@ -6,7 +6,7 @@ class CompMenu {
         $this->menuContent = '<nav><ul>';
         $this->menuContent .= '<li><a class="menu-button" href="index.php?module=tours">Tours</a></li>';
         $this->menuContent .= '<li><a class="menu-button" href="index.php?module=ennemis">Ennemis</a></li>';
-        $this->menuContent .= '<li><a class="menu-button" href="index.php?module=classement">Classement</a></li>';
+        $this->menuContent .= '<li><a class="menu-button" href="index.php?module=classement&action=afficher">Classement</a></li>';
         $utilisateurConnecte = isset($_SESSION['user_id']); 
 
         if ($utilisateurConnecte) {
