@@ -255,3 +255,28 @@ a:hover {
 }
 /* ... et ainsi de suite pour chaque feu d'artifice ... */
 
+.hamburger-menu {
+    font-size: 24px;
+    cursor: pointer;
+    /* autres styles si nécessaire */
+}
+
+.nav-menu {
+    display: none; /* Cache le menu par défaut */
+    position: absolute; /* Ajustez selon votre mise en page */
+    /* autres styles pour le menu */
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    /* autres styles pour la liste */
+}
+
+.nav-menu ul li {
+    /* styles pour chaque élément de liste */
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    /* autres styles pour les liens */
+}
