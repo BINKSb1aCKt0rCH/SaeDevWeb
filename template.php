@@ -43,7 +43,7 @@
 
     <header>
         <div style="text-align: left;">
-            <a href="index.php">
+            <a href="index.php?module=accueil&action=accueil">
                 <div class="logo"></div> 
             </a>
         </div>
@@ -57,6 +57,7 @@
         /*$vueConnexion->affiche_barre_recherche();*/
         ?>
     </header>
+
 
     <main>
         <?php echo ''.$contenuModule; ?>
