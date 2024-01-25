@@ -49,7 +49,7 @@ class ContConnexion {
 		    $utilisateur = $this->modele_connexion->verifiernomJoueurExistant($nomJoueur);
 
             if ($utilisateur !== null && password_verify($passwd, $utilisateur['passwd'])) {
-                $_SESSION['user_id'] = $utilisateur['idJoueur'];
+                $_SESSION['user_id'] = $utilisateur;
                 echo "Vous êtes connecté sous l'identifiant " . $utilisateur['nomJoueur'];
             } else {
                 echo "Informations de connexion incorrectes.";

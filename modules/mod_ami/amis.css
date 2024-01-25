@@ -1,0 +1,62 @@
+/* Styles pour affiche_barre (Recherche d'amis) */
+
+#barre-container {
+    flex-basis: 50%; /* Prend toute la largeur disponible */
+    padding: 10px;
+    background-color: rgba(245, 245, 245, 0.8);
+    border-radius: 8px;
+    /* Positionner en haut à gauche */
+    position: absolute;
+    top: 110px;
+    left: 0;
+    /* Autres styles... */
+}
+
+/* Styles pour affiche_ami */
+#ami-container {
+    flex-basis: 50%; /* Prend 50% de l'espace horizontal */
+    padding: 10px;
+    background-color: rgba(245, 245, 245, 0.8);
+    border-radius: 8px;
+    /* Positionner en haut à droite */
+    position: absolute;
+    top: 110px;
+    right: 0;
+    /* Autres styles... */
+}
+
+/* Styles pour affiche_demande */
+#demandeAmis-container {
+    max-width: 600px;
+    padding: 10px;
+    background-color: rgba(245, 245, 245, 0.8);
+    border-radius: 8px;
+    /* Positionner en bas à gauche */
+    position: absolute;
+    bottom: 58px;
+    right: 0;
+    /* Autres styles... */
+}
+
+#liste-container {
+    /* Styles pour la fenêtre modale */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    background-color: rgba(245, 245, 245, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000; /* S'assure que la fenêtre est au-dessus des autres éléments */
+    /* Autres styles... */
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+    #barre-container, #ami-container, #demandeAmis-container {
+        position: static; /* Enlève la position absolue pour le responsive */
+        flex-basis: 100%; /* Occupe toute la largeur sur les petits écrans */
+    }
+}

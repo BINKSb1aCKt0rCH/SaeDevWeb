@@ -1,8 +1,7 @@
 <?php
 session_start();
 require_once 'modules/mod_connexion/mod_connexion.php';
-/*require_once 'modules/mod_tour/mod_tours.php';
-require_once 'modules/mod_ennemi/mod_ennemis.php'*/
+require_once 'modules/mod_ami/mod_ami.php';
 require_once 'Connexion.php';
 require_once 'composants/CompMenu.php';
 
@@ -26,6 +25,10 @@ if (isset($_GET['module'])) {
 
         case 'connexion':
             $mod = new ModConnexion();
+            break;
+        
+        case 'ami':
+            $mod = new ModAmi();
             break;
         }
     }
