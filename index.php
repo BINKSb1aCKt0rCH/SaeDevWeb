@@ -1,9 +1,10 @@
 <?php
 session_start();
 require_once 'modules/mod_connexion/mod_connexion.php';
+require_once 'modules/mod_ami/mod_ami.php';
 require_once 'modules/mod_tours/mod_tours.php';
 require_once 'modules/mod_monstres/mod_monstres.php';
-require_once 'connexion.php';
+require_once 'Connexion.php';
 require_once 'composants/CompMenu.php';
 require_once 'modules/mod_classement/classement_mod.php';
 require_once 'modules/mod_profil/mod_profil.php';
@@ -33,15 +34,16 @@ if (isset($_GET['module'])) {
         case 'classement':
             $mod = new ModClassement();
             break;
+
+        case 'ami':
+            $mod = new ModAmi();
+            break;
+
         case 'profil':
             $mod = new ModProfil();
             break;
         case 'accueil':
             $mod = new ModuleAccueil();
-            break;
-        
-        case 'ami':
-            $mod = new ModAmi();
             break;
         }
     

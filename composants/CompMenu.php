@@ -13,6 +13,7 @@ class CompMenu {
 
         if ($utilisateurConnecte) {
             $this->menuContent .= '<li><a class="menu-button" href="index.php?module=ami&action=ami">Amis</a></li>';
+            $this->menuContent .= '<li><a class="menu-button" href="index.php?module=profil&action=profil">Profil</a></li>';
             $this->menuContent .= '<li><a href="index.php?module=connexion&action=deconnexion"><div class="deconnexion-icon"></div></a></li>';
 
         } else {
