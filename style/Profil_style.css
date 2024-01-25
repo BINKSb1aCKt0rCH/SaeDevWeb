@@ -122,9 +122,9 @@
 }
 
 /* Modification du profil */
-
+/*
 .popup {
-    position: fixed; /* Modifié pour rester fixe par rapport à la fenêtre */
+    position: fixed; /* Modifié pour rester fixe par rapport à la fenêtre 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -135,6 +135,27 @@
     box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     transition: opacity 200ms ease-in-out 0ms;
+}
+/* Pour styliser le lien comme un bouton 
+a.button {
+    display: inline-block;
+    padding: 10px 18px;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: capitalize;
+    background: #66e;
+    color: whitesmoke;
+    border-radius: 8px;
+    margin: 10px;
+    font-weight: 600;
+    transition: all 0.1s;
+}
+
+a.button:hover {
+    transform: scale(0.98);
+    background: #44b;
+    color: #eee;
 }
 
 .popup .close-btn {
@@ -165,7 +186,7 @@
 
 .popup .form .form-element {
     margin: 15px 0px;
-    text-align: center; /* Centrer les éléments du formulaire */
+    text-align: center; /* Centrer les éléments du formulaire 
 }
 
 .popup .form .form-element label {
@@ -194,3 +215,4 @@
     border-radius: 10px;
     cursor: pointer;
 }
+*/

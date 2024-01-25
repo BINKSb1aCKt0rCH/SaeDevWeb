@@ -20,7 +20,13 @@ class ModeleProfil extends Connexion{
         }
     }
     }
-    
+    public function get_details ($id) {
+		$req = "SELECT * FROM Joueur WHERE id=:id";
+		$pdo_req = self::$bdd->prepare($req);
+		$pdo_req->bindParam("id", $id, PDO::PARAM_INT);
+		$pdo_req->execute();
+		return $pdo_req->fetch();
+	}
     
     public function getSucces($id) {
         $req = self::$bdd->prepare("SELECT idSucces, nomSucces FROM Succes 
@@ -76,45 +82,16 @@ class ModeleProfil extends Connexion{
     }
     
 
-    public function logo($id) {
-        /*
-        if ($_FILES['avatar']['error'] === UPLOAD_ERR_OK) { // Utilisation de la constante UPLOAD_ERR_OK
-            $dossierDest = "images/";
-            $tmp_name = $_FILES['avatar']['tmp_name'];
-            $nomFic = basename($_FILES['avatar']['name']); // Correction : ['name'] au lieu de ['name']
-            $chemin = $dossierDest . $nomFic;
-            move_uploaded_file($tmp_name, $chemin); // Utilisation de $tmp_name au lieu de "$tmp_name"
-            $lien = $dossierDest . $nomFic;
-            return $lien;
-        }*/
-            if ($_FILES['profil']['error'] === UPLOAD_ERR_OK) {
-                $dossierDest = "images/";
-                $tmp_name = $_FILES['profil']['tmp_name'];
-                $nomFic = basename($_FILES['profil']['name']);
-                $chemin = $dossierDest . $nomFic;
-        
-                // Vérifier si le fichier a été correctement téléchargé
-                if (move_uploaded_file($tmp_name, $chemin)) {
-                    $req = "UPDATE joueur SET photo=? WHERE id=?";
-                    $pdo_req = self::$bdd->prepare($req);
-                    $pdo_req->execute(array($chemin, $id));
-        
-                    // Vérifier si la mise à jour a affecté des lignes
-                    if ($pdo_req->rowCount() == 0) {
-                        return false;
-                    } else {
-                        return true;
-                    }
-                } else {
-                    // Gestion des erreurs de téléchargement
-                    echo "Erreur lors du téléchargement du fichier.";
-                    return false;
-                }
-            } else {
-                // Gestion des erreurs d'upload
-                echo "Erreur d'upload du fichier.";
-                return false;
-            }
+    public function logo($id, $chemin) {
+        $dossierDest = "images/";
+        $req = "UPDATE joueur SET photo=? WHERE id=?";
+		$pdo_req = self::$bdd->prepare($req);
+		$pdo_req->execute(array($chemin, $id));
+		if($pdo_req->rowCount() == 0)
+			return false;
+		else
+			return true;
         }
+
 }
 ?>
