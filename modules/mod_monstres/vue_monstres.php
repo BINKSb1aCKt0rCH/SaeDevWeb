@@ -10,13 +10,11 @@ class VueMonstres extends VueGenerique{
         <link rel="stylesheet" href="styleTour.css">
         </head>
         <h1>Les Monstres</h1>
-        <table> 
-            <tbody>
-                <tr>
+        <div class="card-container">
         ';
         foreach ($tab as $monstres){
             echo '
-                <td class="case">
+                <div class="card">
                     <img src="'.$monstres['image'].'">
                     <ul>
                         <li class="blanc"> nom : '.$monstres['nomEnnemi'].'</li>
@@ -24,13 +22,11 @@ class VueMonstres extends VueGenerique{
                         <li class="blanc"> XP : '.$monstres['XP'].'</li>
                         <li class="gray"> vitesse : '.$monstres['vitesse'].'</li>
                     </ul>
-                </td>';
+                </div>';
         }
 
         echo '
-                </tr>
-            </tbody>
-            </table>
+            </div>
             ';
     }
 

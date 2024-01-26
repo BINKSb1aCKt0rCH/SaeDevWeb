@@ -46,8 +46,7 @@
 
 
     <main>
-        
-        <?php echo ''.$contenuModule; ?>
+       <?php echo ''.$contenuModule; ?>
     </main>
 
     <footer>

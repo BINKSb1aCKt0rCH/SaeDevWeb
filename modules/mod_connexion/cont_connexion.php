@@ -44,11 +44,11 @@ class ContConnexion {
     public function connexion() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nomJoueur = isset($_POST['nomJoueur']) ? $_POST['nomJoueur'] : '';
-            $passwd= isset($_POST['passwd']) ? $_POST['passwd'] : '';
+            $passwd = isset($_POST['passwd']) ? $_POST['passwd'] : '';
     
-		    $utilisateur = $this->modele_connexion->verifiernomJoueurExistant($nomJoueur);
-
-            if ($utilisateur !== null && password_verify($passwd, $utilisateur['passwd'])) {
+            $utilisateur = $this->modele_connexion->verifiernomJoueurExistant($nomJoueur);
+    
+            if (is_array($utilisateur) && password_verify($passwd, $utilisateur['passwd'])) {
                 $_SESSION['user_id'] = $utilisateur;
                 echo "Vous êtes connecté sous l'identifiant " . $utilisateur['nomJoueur'];
             } else {
@@ -59,6 +59,7 @@ class ContConnexion {
             $this->vue_connexion->affiche_formulaire_connexion();
         }
     }
+    
 
     public function deconnexion() {
         unset($_SESSION['user_id']);

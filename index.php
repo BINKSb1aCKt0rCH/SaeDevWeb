@@ -12,47 +12,51 @@ require_once 'modules/mod_accueil/mod_accueil.php';
 
 Connexion::initConnexion();
 
-
-$mod = null; 
 $contenuModule = '';
 
-if (isset($_GET['module'])) {
-    $module = $_GET['module'];
-   
-    switch ($module) {
-        case 'tours':
-            $mod = new ModuleTours();
-            break;
+$module = isset($_GET['module']) ? $_GET['module'] : 'accueil';
 
-        case 'monstres':
-            $mod = new ModuleMonstres();
-            break;    
+switch ($module) {
+    case 'accueil':
+        default:
+        $modAccueil = new ModuleAccueil();
+        $contenuModule = $modAccueil->getAffichage();
+        break;
 
-        case 'connexion':
-            $mod = new ModConnexion();
-            break;
-        case 'classement':
-            $mod = new ModClassement();
-            break;
+    case 'tours':
+        $modTours = new ModuleTours();
+        $contenuModule = $modTours->getAffichage();
+        break;
 
-        case 'ami':
-            $mod = new ModAmi();
-            break;
+    case 'monstres':
+        $modMonstres = new ModuleMonstres();
+        $contenuModule = $modMonstres->getAffichage();
+        break;    
 
-        case 'profil':
-            $mod = new ModProfil();
-            break;
-        case 'accueil':
-            $mod = new ModuleAccueil();
-            break;
-        default : $mod = new ModuleAccueil();
-        }
-    
-    }
+    case 'connexion':
+        $modConnexion = new ModConnexion();
+        $contenuModule = $modConnexion->getAffichage();
+        break;
+    case 'classement':
+        $modClassement = new ModClassement();
+        $contenuModule = $modClassement->getAffichage();
+        break;
 
-if ($mod !== null) {
-    $contenuModule = $mod->getAffichage();
+    case 'ami':
+        $modAmi = new ModAmi();
+        $contenuModule = $modAmi->getAffichage();
+        break;
+
+    case 'profil':
+        $modProfil = new ModProfil();
+        $contenuModule = $modProfil->getAffichage();
+        break;
 }
-    $menu = new CompMenu();
-    require_once 'template.php';
+
+/*if ($mod !== null) {
+    $contenuModule = $mod->getAffichage();
+}*/
+
+$menu = new CompMenu();
+require_once 'template.php';
 ?>

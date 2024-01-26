@@ -12,7 +12,7 @@ class VueAmi extends VueGenerique{
         </head>
         <div id="ami-barre-container">
         <div id="ami-container">
-            <h1>Ami</h1>
+            <h1>Amis</h1>
             <?php
             if(isset($_SESSION['message'])){
                 ?>
@@ -22,7 +22,10 @@ class VueAmi extends VueGenerique{
             }else {
                 foreach ($amis as $ami) {
                     ?>
-                    <li><?= $ami['nomJoueur'] ?><a href="index.php?module=ami&action=supprimer&id=<?= $ami['idJoueur'] ?>"> Supprimer</a></li>
+                    <div class="ami-item">
+                        <span class="nom-ami"><?= $ami['nomJoueur'] ?></span>
+                        <a class="bouton-supprimer" href="index.php?module=ami&action=supprimer&id=<?= $ami['idJoueur'] ?>">Supprimer</a>
+                    </div>
                     <?php
                 }
             }
@@ -69,7 +72,7 @@ class VueAmi extends VueGenerique{
             <link rel="stylesheet" href="modules/mod_ami/amis.css">
         </head>
         <div id="liste-container">
-            <?= $tab[0]['nomJoueur'] ?><a href="index.php?module=ami&action=ajouter&id=<?= $tab[0]['idJoueur'] ?>&date=<?= date('Y-m-d H:i:s') ?>"> Ajouter</a>
+            <?= $tab[0]['nomJoueur'] ?><a class="menu-button" href="index.php?module=ami&action=ajouter&id=<?= $tab[0]['idJoueur'] ?>&date=<?= date('Y-m-d H:i:s') ?>"> Ajouter</a>
             <br>
             <br>
         </div>
@@ -96,7 +99,11 @@ class VueAmi extends VueGenerique{
             }else {
                 foreach ($demandes as $demandeAmis) {
                     ?>
-                    <li><?= $demandeAmis['idJoueur'] ?> <?= $demandeAmis['nomJoueur'] ?><a href="index.php?module=ami&action=accepter&id=<?= $demandeAmis['idJoueur'] ?>"> Accepter</a> <a href="index.php?module=ami&action=refuser&id=<?= $demandeAmis['idJoueur'] ?>"> Refuser</a></li>
+                    <div class="ami-item">
+                        <span class="nom-ami"><?= $demandeAmis['nomJoueur'] ?></span>
+                        <a class="bouton-supprimer" href="index.php?module=ami&action=accepter&id=<?= $demandeAmis['idJoueur'] ?>">Accepter</a>
+                        <a class="bouton-supprimer" style="background-color: #dc3545;" href="index.php?module=ami&action=refuser&id=<?= $demandeAmis['idJoueur'] ?>">Refuser</a>
+                        </div>
                     <?php 
                 }
             }

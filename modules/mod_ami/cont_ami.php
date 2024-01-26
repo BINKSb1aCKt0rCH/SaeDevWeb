@@ -80,7 +80,7 @@ class ContAmi {
     
     function demande() {
         if($this->modele->recupererDemandes($_SESSION['user_id']['idJoueur']) === false){
-            $_SESSION["message_erreur"] = "Vous n'avez pas de demande d'ami.";
+            $_SESSION["message_erreur"] = "Aucune demande d'ami en attente pour le moment.";
         }
         $this->vue->affiche_demandeAmis($this->modele->recupererDemandes($_SESSION['user_id']['idJoueur']));
     }
@@ -125,7 +125,7 @@ class ContAmi {
 
     function demander() {
         if($this->modele->recupererAmi($_SESSION['user_id']['idJoueur']) === false){
-            $_SESSION["message"] = "Vous n'avez pas de demande d'ami.";
+            $_SESSION["message"] = "Vous n'avez encore ajouté aucun ami.";
         }
         $this->vue->affiche_ami($this->modele->recupererAmi($_SESSION['user_id']['idJoueur']));
     }

@@ -1,5 +1,4 @@
 /* Styles pour affiche_barre (Recherche d'amis) */
-
 #barre-container {
     flex-basis: 50%; /* Prend toute la largeur disponible */
     padding: 10px;
@@ -22,8 +21,80 @@
     position: absolute;
     top: 110px;
     right: 0;
-    /* Autres styles... */
+    /* Ajouts et modifications pour #ami-container */
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    .ami-item {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ajout d'une légère ombre */
+    }
+    .nom-ami {
+        font-weight: bold;
+    }
+    .bouton-supprimer {
+        background-color: #ff4d4d;
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.9em;
+    }
+    .bouton-supprimer:hover {
+        background-color: #ff3333;
+    }
+    .message-alert {
+        color: red;
+        text-align: center;
+        margin-bottom: 15px;
+    }
 }
+
+.demande-ami-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.bouton-accepter, .bouton-refuser {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: white;
+}
+
+.bouton-accepter {
+    background-color: #28a745; /* Vert */
+}
+
+.bouton-accepter:hover {
+    background-color: #218838;
+}
+
+.bouton-refuser {
+    background-color: #dc3545; /* Rouge */
+}
+
+.bouton-refuser:hover {
+    background-color: #c82333;
+}
+
 
 /* Styles pour affiche_demande */
 #demandeAmis-container {
