@@ -9,7 +9,7 @@
     padding: 20px;
     width: 60%;
     height: auto;
-    background-color: aqua;
+    background-color: rgba(248, 248, 248, 0.8);
     margin: auto; /* Centrer le contenu */
 }
 
@@ -103,7 +103,7 @@
     margin-top: 30px;
     width: 90%;
     height: 90%;
-    background-color: aqua;
+    /*background-color: rgba(248, 248, 248, 0.8);*/
     display: flex;
     justify-content: space-between; /* Espacement égal entre les éléments enfants */
 }
@@ -120,7 +120,7 @@
 }
 
 .corpsPage .stats {
-    background-color: blueviolet;
+    background-color: rgba(248, 248, 248, 0.8);
 }
 
 /* Modification du profil */
