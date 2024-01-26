@@ -8,7 +8,7 @@ class VueMessage extends VueGenerique{
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="modules/mod_message/Css-Message.css">
+            <link rel="stylesheet" href="modules/mod_message/message.css">
         </head>
         <div id="message-container">
             <h2>Messages:</h2>
@@ -40,7 +40,7 @@ class VueMessage extends VueGenerique{
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="modules/mod_message/Css-Message.css">
+            <link rel="stylesheet" href="modules/mod_message/message.css">
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
                     var messageContainer = document.getElementById("message-container");
@@ -59,7 +59,7 @@ class VueMessage extends VueGenerique{
                 unset($_SESSION['affiche_message_erreur']);
             } else {
                 foreach ($messages as $message) {
-                    $messageClass = ($message['id_joueur'] == $_SESSION['user']['id_joueur']) ? 'user-message' : 'other-message';
+                    $messageClass = ($message['idJoueur'] == $_SESSION['user_id']['idJoueur']) ? 'user-message' : 'other-message';
                     ?>
                     <div class="message <?= $messageClass ?>">
                         <?= $message['message'] ?>
@@ -78,7 +78,7 @@ class VueMessage extends VueGenerique{
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="modules/mod_message/Css-Message.css">
+            <link rel="stylesheet" href="modules/mod_message/message.css">
         </head>
 
         <div id="message-form">
@@ -98,7 +98,7 @@ class VueMessage extends VueGenerique{
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="modules/mod_message/Css-Message.css">
+            <link rel="stylesheet" href="modules/mod_message/message.css">
         </head>
         <?php
         if (isset($_SESSION['erreur'])) {
