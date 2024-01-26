@@ -1,12 +1,12 @@
 <?php
-    require_once 'cont_ami.php';
+    require_once 'cont_message.php';
 
-    class ModAmi {
+    class ModMessage {
 
     private $controleur;
 
     function __construct() {
-        $this->controleur = new ContAmi();
+        $this->controleur = new ContMessage();
         $this->controleur->exec();
     }
 

@@ -9,6 +9,8 @@ require_once 'composants/CompMenu.php';
 require_once 'modules/mod_classement/classement_mod.php';
 require_once 'modules/mod_profil/mod_profil.php';
 require_once 'modules/mod_accueil/mod_accueil.php';
+require_once 'modules/mod_message/mod_message.php';
+
 
 Connexion::initConnexion();
 
@@ -51,7 +53,11 @@ switch ($module) {
         $modProfil = new ModProfil();
         $contenuModule = $modProfil->getAffichage();
         break;
-}
+    case 'message':
+        $modMessage = new ModMessage();
+        $contenuModule = $modMessage->getAffichage();
+        break;
+    }
 
 /*if ($mod !== null) {
     $contenuModule = $mod->getAffichage();
