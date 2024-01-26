@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenu {
+    width: 60%;
+    height: auto;
+    background-color: aqua;
+    margin: auto; /* Centrer le contenu */
+}
+
+.imageFond {
+    height: auto;
+    position: relative;
+}
+
+.imageFond .cover_photo {
+    height: 400px; /* Hauteur de base */
+    width: 100%;
+}
+
+.imageFond .photoProfil {
+    height: 150px; /* Ajustez en fonction de vos besoins */
+    width: 150px; /* Ajustez en fonction de vos besoins */
+    border-radius: 50%;
+    overflow: hidden;
+    background: black;
+    padding: 5px;
+    position: absolute;
+    top: 35%; /* En bas de cover_photo */
+    left: 0; /* À gauche de cover_photo */
+    margin: 10px; /* Marge pour l'espace entre la photo de profil et la bordure de cover_photo */
+}
+
+.photoProfil img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.titre {
+    margin-top: 10px;
+    height: 25px;
+    padding: 0 15%;
+    text-align: center; /* Centrer le texte */
+}
+
+.titre h1 {
+    font-size: 30px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.desc {
+    font-size: 20px;
+    display: inline-block;
+    padding: 0 15%;
+    margin-top: 5%;
+    text-align: center; /* Centrer le texte */
+}
+
+.boutons {
+    text-align: center; /* Centrer les boutons */
+}
+
+.btn {
+    padding: 10px 18px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    background: #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    font-weight: 600;
+    transition: all 0.1s;
+}
+
+.btn1,
+.btn2 {
+    background-color: #66e;
+    color: whitesmoke;
+}
+
+.btn1:hover,
+.btn2:hover {
+    transform: scale(0.98);
+    background: #44b;
+    color: #eee;
+}
+
+.corpsPage img {
+    margin-top: 0%;
+    width: 160px;
+    height: 160px;
+}
+
+.corpsPage {
+    margin-top: 30px;
+    width: 90%;
+    height: 90%;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between; /* Espacement égal entre les éléments enfants */
+}
+
+.corpsPage .succes,
+.corpsPage .stats {
+    width: 48%; /* Pour assurer l'espacement entre les deux blocs */
+    display: block;
+    text-align: center; /* Centrer le texte */
+}
+
+.corpsPage .succes {
+    background-color: rgba(240, 248, 255, 0.7);
+}
+
+.corpsPage .stats {
+    background-color: blueviolet;
+}
+
+/* Modification du profil */
+/*
+.popup {
+    position: fixed; /* Modifié pour rester fixe par rapport à la fenêtre 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 450px;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    transition: opacity 200ms ease-in-out 0ms;
+}
+/* Pour styliser le lien comme un bouton 
+a.button {
+    display: inline-block;
+    padding: 10px 18px;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: capitalize;
+    background: #66e;
+    color: whitesmoke;
+    border-radius: 8px;
+    margin: 10px;
+    font-weight: 600;
+    transition: all 0.1s;
+}
+
+a.button:hover {
+    transform: scale(0.98);
+    background: #44b;
+    color: #eee;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.popup.active {
+    opacity: 1;
+    transition: opacity 200ms ease-in-out 0ms;
+}
+
+.popup .form h2 {
+    text-align: center;
+    color: #222;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+
+.popup .form .form-element {
+    margin: 15px 0px;
+    text-align: center; /* Centrer les éléments du formulaire 
+}
+
+.popup .form .form-element label {
+    font-size: 14px;
+    color: #222;
+}
+
+.popup .form .form-element input[type="text"],
+.popup .form .form-element input[type="file"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.popup .form .form-element input[type="submit"] {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+}
+*/
