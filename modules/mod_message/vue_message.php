@@ -3,6 +3,13 @@ require_once 'vue_generique.php';
 
 class VueMessage extends VueGenerique{
 
+    public function generateCsrfToken() {
+        if (!isset($_SESSION['csrf_token'])) {
+            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+        }
+        return $_SESSION['csrf_token'];
+    }
+
 	public function afficherAmi($amis) {
         ?>
         <head>
@@ -74,6 +81,7 @@ class VueMessage extends VueGenerique{
     
 
     public function envoyer($ami) {
+        $csrf_token = $this->generateCsrfToken();
         ?>
         <head>
             <meta charset="UTF-8">
@@ -83,6 +91,7 @@ class VueMessage extends VueGenerique{
 
         <div id="message-form">
             <form action="index.php?module=message&action=envoyer&id=<?= $ami ?>" method="post">
+                <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                 <label for="message">Message:</label>
                 <input type="text" id="message" name="message"><br>
                 <input type="submit" id="submit-btn" value="Envoyer">

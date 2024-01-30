@@ -2,8 +2,6 @@
 require_once 'modele_connexion.php';
 require_once 'vue_connexion.php';
 
-
-
 class ContConnexion {
     public $vue_connexion;
     public $modele_connexion;
@@ -15,8 +13,15 @@ class ContConnexion {
         $this->action = isset($_GET['action']) ? $_GET['action'] : '';
     }
 
+    private function verifyCsrfToken() {
+        if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die("Erreur de sécurité CSRF.");
+        }
+    }
+
     public function inscription() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->verifyCsrfToken();
             $nomJoueur = isset($_POST['nomJoueur']) ? $_POST['nomJoueur'] : '';
             $passwd = isset($_POST['passwd']) ? $_POST['passwd'] : '';
 
@@ -43,6 +48,7 @@ class ContConnexion {
 
     public function connexion() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->verifyCsrfToken();
             $nomJoueur = isset($_POST['nomJoueur']) ? $_POST['nomJoueur'] : '';
             $passwd = isset($_POST['passwd']) ? $_POST['passwd'] : '';
     
@@ -59,7 +65,6 @@ class ContConnexion {
             $this->vue_connexion->affiche_formulaire_connexion();
         }
     }
-    
 
     public function deconnexion() {
         unset($_SESSION['user_id']);
@@ -68,19 +73,11 @@ class ContConnexion {
     public function form_inscription() {
         $this->vue_connexion->affiche_formulaire_inscription();
     }
-    
 
     public function getAffichage() {
         $affichage = $this->vue_connexion->getAffichage();
         return $affichage;
     }
-
-    /*public function recherche(){
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $nomJoueur = $_POST['nomJoueur'];
-        }
-    }*/
-    
 
     public function exec() {
         switch ($this->action) {
